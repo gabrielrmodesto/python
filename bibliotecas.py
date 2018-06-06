@@ -12,3 +12,13 @@ def envia_convite(nome):
 def processa_convite(nome_convidado):
 	nome_formatado = gera_nome_convite(nome_convidado)
 	envia_convite(nome_formatado)
+
+def cadastrar(nomes):
+	print 'Digite o seu nome'
+	nome = raw_input()
+	nomes.append(nome)
+
+def remover(nomes):
+	print 'Quem voce deseja tirar?'
+	nome = raw_input()
+	nomes.remove(nome)
