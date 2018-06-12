@@ -1,4 +1,6 @@
 # -*- coding: UTF-8 -*-
+import re
+
 def cadastrar(nomes):
 	print 'Digite seu nome'
 	nome = raw_input()
@@ -31,11 +33,18 @@ def procurar(nomes):
 	else:
 		print 'O nome %s nao existe' % busca
 
+def procurar_regex(nomes):
+	print('Digite a expressao regular')
+	regex = raw_input()
+	regex_concatenado = ''.join(regex)
+	resultado = re.findall(regex, regex_concatenado)
+	print resultado
+
 def menu():
 	nomes = []
 	escolha = ''
 	while (escolha != '0'):
-		print 'Digite:\n 1 para cadastrar\n 2 para listar\n 3 para remover\n 4 para alterar \n 5 para procurar\n 0 para encerrar'
+		print 'Digite:\n 1 para cadastrar\n 2 para listar\n 3 para remover\n 4 para alterar \n 5 para procurar\n 6 para expressao\n 0 para encerrar'
 		escolha = raw_input()
 		if(escolha == '1'):
 			cadastrar(nomes)
@@ -47,5 +56,7 @@ def menu():
 			alterar(nomes)
 		if(escolha == '5'):
 			procurar(nomes)
+		if(escolha == '6'):
+			procurar_regex(nomes)
 
 menu()
