@@ -1,3 +1,2 @@
-bibliotecas.pyc
 __pycache__/*
-models.pyc
+*.pyc
